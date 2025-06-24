@@ -1,0 +1,16 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+<h2>Название:{{ product.name }}</h2>
+<p>Состав:{{ product.description }}</p>
+<p>Цена: {{ product.price }} руб.</p>
+<p>Количество: {{ product.quantity }} штук</p>
+<p>Категория: {{ product.category.name }}</p>
+<p>Дата создания: {{ product.created_at }}</p>
+
+{% endblock %}
+
+
+
+
+
+

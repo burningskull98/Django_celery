@@ -1,0 +1,22 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+<h2>Список товаров</h2>
+<ul>
+    {% for product in products %}
+    <li>
+        <h3>Название:{{ product.name }}</h3>
+        <p>Цена: {{ product.price }} руб.</p>
+        <p>Категория: {{ product.category.name }}</p>
+        <button type="button" class="btn btn-warning">
+            <a href="{% url 'edit_product' product.id  %}">Изменить карточку товара</a></button>
+        <button type="button" class="btn btn-info">
+            <a href="{% url 'product_detail' product.pk %}">Подробнее</a></button>
+    </li>
+    {% empty %}
+    <p>Товаров нет</p>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+ml>
